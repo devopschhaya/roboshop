@@ -8,3 +8,5 @@ all the codes
 and mak esure statements are coorect "
 }
 test
+test2()
+{echo }

@@ -16,4 +16,4 @@ a=10
 b=20
 c=40
 echo -e "value of a is $a"
-echo -e "value of a is \e[33;31m$a\e[0m"
+echo -e "value \e[32m;of a is \e[33;31m$a\e[0m"

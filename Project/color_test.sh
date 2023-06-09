@@ -15,4 +15,4 @@ echo -e "\e[44;33m; good \e[0m"
 a=10
 b=20
 c=40
-echo -e "value of a is &a"
+echo -e "value of a is $a"

@@ -9,4 +9,5 @@ and mak esure statements are coorect "
 }
 test
 test2()
-{echo }
+{if 1=0 then
+call test() }

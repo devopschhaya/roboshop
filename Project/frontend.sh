@@ -9,3 +9,4 @@ echo  this is to test the bash
 echo  "my project is good"
 echo -e "/t work is good "
 echo -e "Today's date is \e[36;33m $Date \e[0m"
+echo -e "\e[43;32m Test \e[0m"

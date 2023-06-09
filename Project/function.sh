@@ -11,3 +11,5 @@ test
 test2()
 {if 1=0 then
 call test() }
+test
+test

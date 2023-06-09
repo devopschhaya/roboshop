@@ -12,3 +12,7 @@ echo -e "Today's date is \e[43;32m $Date \e[0m"
 echo -e "\e[43;32m Test \e[0m"
 echo -e "\e[44;33m; good \e[0m"
 
+a=10
+b=20
+c=40
+echo -e "value of a is &a"

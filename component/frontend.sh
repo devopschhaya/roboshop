@@ -1,5 +1,5 @@
 #!/bin/bash 
-
+echo "I am a frontend"
 COMPONENT=frontend
 
 source components/common.sh

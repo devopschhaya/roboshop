@@ -9,7 +9,7 @@ exit 1
 fi
 
 echo -n "Installing Nginx :"
-yum install nginx -y  &>> "/tmp/${COMPONENT}.LOG"
+yum install nginxq -y  &>> "/tmp/${COMPONENT}.LOG"
 if [ $? -ne 0 ] ; then
 echo -e "\e[32m install has error or failed \e[0m"
 else

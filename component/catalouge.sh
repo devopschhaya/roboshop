@@ -44,6 +44,6 @@ stat $?
 
 mv $COMPONENT-main/ $COMPONENT
 chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT/
-$ cd /home/roboshop/catalogue
-$ npm install
+ cd /home/roboshop/catalogue
+ npm install
 stat $? 

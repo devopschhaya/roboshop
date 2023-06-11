@@ -3,7 +3,7 @@ echo "i am a catalouge"
 
 COMPONENT=catalouge
 LOGFILE="/tmp/${COMPONENT}.log"
-ID=$id
+ID=$(id -u)
 
 stat() {
 if [ $1 -ne 0 ] ; then

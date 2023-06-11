@@ -26,4 +26,8 @@ curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${CO
 stat $?
 echo -n "unzip frontend component"
 unzip /tmp/${COMPONENT}.zip   &>> $LOGFILE
+mv $COMPONENT-main/*  .
+mv static/* . 
+rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
+stat $? 

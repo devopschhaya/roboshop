@@ -10,7 +10,6 @@ fi
 stat() {
 if [ $1 -ne 0 ] ; then
 echo -e "\e[32m install has error or failed \e[0m"
-
 else
 echo -e "\e[31m Install Succeesful \e[0m"
 
@@ -24,3 +23,5 @@ stat $?
 echo -n "Installing $COMPONENT :"
 curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 stat $?
+echo -n "unzip frontend component"
+/tmp/${COMPONENT}.zip   &>> $LOGFILE

@@ -38,15 +38,15 @@ rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $? 
 
-echo -n "Updating the Backend component reveseproxy details : "
-for component in catalogue user cart shipping payment; do
-    sed -i -e "/$component/s/localhost/$component.roboshop.internal/"  /etc/nginx/default.d/roboshop.conf
-done 
-stat $? 
+##echo -n "Updating the Backend component reveseproxy details : "
+#for component in catalogue user cart shipping payment; do
+ #   sed -i -e "/$component/s/localhost/$component.roboshop.internal/"  /etc/nginx/default.d/roboshop.conf
+#done 
+#stat $? 
 
 #starting frontend
 echo -n "Starting $COMPONENT service: "
-systemctl daemon-reload &>> $LOGFILE
+#systemctl daemon-reload &>> $LOGFILE
 systemctl enable nginx  &>> $LOGFILE
-systemctl restart nginx   &>> $LOGFILE
+systemctl start nginx   &>> $LOGFILE
 stat $?

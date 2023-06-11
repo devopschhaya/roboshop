@@ -39,5 +39,11 @@ stat $?
 
 echo "unzipping catalouge"
 cd /home/${APPUSER}/
-unzip /tmp/catalouge.zip  
+unzip -o /tmp/catalouge.zip  &>> $LOGFILE
+stat $?
+
+mv $COMPONENT-main/ $COMPONENT
+chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT/
+$ cd /home/roboshop/catalogue
+$ npm install
 stat $? 

@@ -33,7 +33,7 @@ stat $?
 fi
 
 echo -n "Downloading the $COMPONENT schema:"
-curl -s -L -o /tmp/catalouge.zip "https://github.com/stans-robot-project/catalouge/archive/main.zip"
+curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
 stat $?
 
 

@@ -43,7 +43,7 @@ unzip -o /tmp/catalogue.zip  &>> $LOGFILE
 
 mv $COMPONENT-main/ $COMPONENT
 chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT/
- cd /home/roboshop/catalouge
- npm install
-stat $? 
+# cd /home/roboshop/catalouge
+# npm install
+#stat $? 
 

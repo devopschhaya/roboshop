@@ -4,6 +4,7 @@ echo "i am a catalouge"
 COMPONENT=catalouge
 LOGFILE="/tmp/${COMPONENT}.log"
 ID=$(id -u)
+APPUSER=roboshop
 
 stat() {
 if [ $1 -ne 0 ] ; then
@@ -32,10 +33,9 @@ stat $?
 fi
 
 echo -n "Downloading the $COMPONENT schema:"
-curl -s -L -o /tmp/catalouge.zip "https://github.com/stans-robot-project/mongodbcatalouge/archive/main.zip"
+curl -s -L -o /tmp/catalouge.zip "https://github.com/stans-robot-project/catalouge/archive/main.zip"
 stat $?
 
-echo -n "Extracting the $COMPONENT Schema:"
-cd /tmp
-unzip -o catalouge.zip   &>> $LOGFILE 
+cd /home/${APPUSER}/
+unzip -O /tmp/catalouge.zip  &>> $LOGFILE
 stat $? 

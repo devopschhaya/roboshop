@@ -22,11 +22,11 @@ if [ $? -ne 0 ] ; then
 echo -e "\e[32m install has error or failed \e[0m"
 else
 echo -e "\e[31m Install Succeesful \e[0m"
-exit2
+ exit 2
 fi
 
 echo -n "Installing $COMPONENT :"
-curl /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 if [ $? -ne 0 ] ; then
 echo -e "\e[32m install has error or failed \e[0m"
 else

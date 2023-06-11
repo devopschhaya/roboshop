@@ -25,6 +25,12 @@ echo -n "Installing $COMPONENT :"
 curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 stat $?
 echo -n "unzip frontend component"
+echo -n "Performing Cleanup: "
+cd /usr/share/nginx/html
+rm -rf *    &>> $LOGFILE
+stat $?
+
+echo "extracting content"
 unzip /tmp/${COMPONENT}.zip   &>> $LOGFILE
 mv $COMPONENT-main/*  .
 mv static/* . 
@@ -32,11 +38,11 @@ rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $? 
 
-#performing cleanup
-echo -n "Performing Cleanup: "
-cd /usr/share/nginx/html
-rm -rf *    &>> $LOGFILE
-stat $?
+echo -n "Updating the Backend component reveseproxy details : "
+for component in catalogue user cart shipping payment; do
+    sed -i -e "/$component/s/localhost/$component.roboshop.internal/"  /etc/nginx/default.d/roboshop.conf
+done 
+stat $? 
 
 #starting frontend
 echo -n "Starting $COMPONENT service: "

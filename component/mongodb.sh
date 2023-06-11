@@ -3,6 +3,15 @@
 COMPONENT=mongodb
 LOGFILE="/tmp/${COMPONENT}.log"
 
+stat() {
+if [ $1 -ne 0 ] ; then
+echo -e "\e[32m install has error or failed \e[0m"
+else
+echo -e "\e[31m Install Succeesful \e[0m"
+
+fi
+}
+
 source components/common.sh
 
 echo -e "*********** \e[35m $COMPONENT Installation has started \e[0m ***********"

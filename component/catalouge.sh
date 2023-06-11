@@ -40,9 +40,12 @@ stat $?
 echo "unzipping catalouge"
 cd /home/${APPUSER}/
 unzip -o /tmp/catalogue.zip  &>> $LOGFILE 
+stat $?
 
+echo -n "Moving catalog :"
 mv $COMPONENT-main/ $COMPONENT
 chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT/
+stat $?
 # cd /home/roboshop/catalouge
 # npm install
 #stat $? 

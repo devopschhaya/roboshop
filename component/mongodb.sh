@@ -42,3 +42,9 @@ echo -n "Extracting the $COMPONENT Schema:"
 cd /tmp
 unzip -o mongodb.zip   &>> $LOGFILE 
 stat $? 
+
+echo -n "Injecting the schema:"
+cd $COMPONENT-main
+mongo < catalogue.js       &>> $LOGFILE 
+mongo < users.js           &>> $LOGFILE 
+stat $? 

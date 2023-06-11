@@ -39,5 +39,5 @@ stat $?
 
 echo "unzipping catalouge"
 cd /home/${APPUSER}/
-unzip -o /tmp/catalouge.zip  &>> $LOGFILE
+unzip -o /tmp/catalouge.zip  
 stat $? 

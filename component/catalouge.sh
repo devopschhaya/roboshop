@@ -45,8 +45,22 @@ stat $?
 echo -n "Moving catalog :"
 mv $COMPONENT-main/ $COMPONENT
 chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT/
+
+echo -n "Installaing NPM :"
+cd /home/${APPUSER}/${COMPONENT}
+npm install  &>> $LOGFILE
+stat $? 
+
+echo -n "Updating Mongodb DNS:"
+sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.online/' /home/$APPUSER/$COMPONENT/systemd.service &>> $LOGFILE
+mv /home/$APPUSER/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service 
 stat $?
-# cd /home/roboshop/catalouge
-# npm install
-#stat $? 
+
+echo -n " $COMPONENT restart :"
+systemctl daemon-reload  &>> $LOGFILE
+systemctl start $COMPONENT &>> $LOGFILE
+systemctl enable $COMPONENT  &>> $LOGFILE
+systemctl status $COMPONENT -l &>> $LOGFILE
+stat $?
+
 

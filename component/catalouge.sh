@@ -41,3 +41,9 @@ echo "unzipping catalouge"
 cd /home/${APPUSER}/
 unzip -o /tmp/catalogue.zip  &>> $LOGFILE 
 
+mv $COMPONENT-main/ $COMPONENT
+chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT/
+ cd /home/roboshop/catalogue
+ npm install
+stat $? 
+

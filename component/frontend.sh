@@ -31,6 +31,14 @@ mv static/* .
 rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $? 
+
+#performing cleanup
+echo -n "Performing Cleanup: "
+cd /usr/share/nginx/html
+rm -rf *    &>> $LOGFILE
+stat $?
+
+#starting frontend
 echo -n "Starting $COMPONENT service: "
 systemctl daemon-reload &>> $LOGFILE
 systemctl enable nginx  &>> $LOGFILE

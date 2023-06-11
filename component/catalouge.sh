@@ -25,7 +25,7 @@ yum install nodejs -y &>> $LOGFILE
 stat $?
 
 id roboshop
-if [$? -ne 0] ; then 
+if [ $? -ne 0 ] ; then 
 echo "creating service account"
 useradd roboshop
 stat $?

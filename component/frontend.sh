@@ -10,23 +10,17 @@ fi
 stat() {
 if [ $1 -ne 0 ] ; then
 echo -e "\e[32m install has error or failed \e[0m"
-exit 2
+
 else
 echo -e "\e[31m Install Succeesful \e[0m"
-
+exit 2
 fi
 }
 
 echo -n "Installing Nginx :"
 yum install nginx -y  &>> "/tmp/${COMPONENT}.LOG"
-if [ $? -ne 0 ] ; then
-echo -e "\e[32m install has error or failed \e[0m"
-exit 2
-else
-echo -e "\e[31m Install Succeesful \e[0m"
 
-fi
-
+stat $?
 echo -n "Installing $COMPONENT :"
 curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
-stat $1
+stat $?

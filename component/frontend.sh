@@ -10,9 +10,10 @@ fi
 stat() {
 if [ $? -ne 0 ] ; then
 echo -e "\e[32m install has error or failed \e[0m"
+exit 2
 else
 echo -e "\e[31m Install Succeesful \e[0m"
-exit 2
+
 fi
 }
 

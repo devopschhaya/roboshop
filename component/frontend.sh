@@ -24,4 +24,5 @@ echo -n "Installing $COMPONENT :"
 curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 stat $?
 echo -n "unzip frontend component"
-/tmp/${COMPONENT}.zip   &>> $LOGFILE
+unzip /tmp/${COMPONENT}.zip   &>> $LOGFILE
+mv localhost.conf /etc/nginx/default.d/roboshop.conf

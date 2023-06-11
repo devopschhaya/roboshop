@@ -36,6 +36,8 @@ echo -n "Downloading the $COMPONENT schema:"
 curl -s -L -o /tmp/catalouge.zip "https://github.com/stans-robot-project/catalouge/archive/main.zip"
 stat $?
 
+
+echo "unzipping catalouge"
 cd /home/${APPUSER}/
-unzip -O /tmp/catalouge.zip  &>> $LOGFILE
+unzip -o /tmp/catalouge.zip  &>> $LOGFILE
 stat $? 

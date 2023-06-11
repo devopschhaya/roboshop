@@ -19,11 +19,12 @@ fi
 
 echo -n "Installing Nginx :"
 yum install nginx -y  &>> "/tmp/${COMPONENT}.LOG"
-
 stat $?
+
 echo -n "Installing $COMPONENT :"
 curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 stat $?
+
 echo -n "unzip frontend component"
 echo -n "Performing Cleanup: "
 cd /usr/share/nginx/html

@@ -30,3 +30,12 @@ echo "creating service account"
 useradd roboshop
 stat $?
 fi
+
+echo -n "Downloading the $COMPONENT schema:"
+curl -s -L -o /tmp/catalouge.zip "https://github.com/stans-robot-project/mongodbcatalouge/archive/main.zip"
+stat $?
+
+echo -n "Extracting the $COMPONENT Schema:"
+cd /tmp
+unzip -o catalouge.zip   &>> $LOGFILE 
+stat $? 

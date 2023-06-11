@@ -16,7 +16,7 @@ fi
 #source components/common.sh
 
 echo configuring Catalouge
-curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - 
+curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -   &>> $LOGFILE
 stat $?
 
 yum install nodejs -y &>> $LOGFILE

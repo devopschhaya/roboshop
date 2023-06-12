@@ -7,7 +7,7 @@ echo -e "AMI id is $AMI_ID"
 echo -e "Security group id is $SG_ID"
 
 echo -e "Launch instane"
-aws ec2 run-instances --image-id ${AMI_ID} --instance-type t2.micro 
+aws ec2 run-instances --image-id ${AMI_ID} --instance-type t2.micro | jq .
     
     
 

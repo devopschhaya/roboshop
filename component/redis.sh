@@ -1,4 +1,4 @@
-#!/bash/bin
+#!/bin/bash 
 echo this is radish
 
 COMPONENT = redis

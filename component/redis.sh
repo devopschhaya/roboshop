@@ -1,8 +1,8 @@
 #!/bin/bash 
-echo this is radish
+echo "this is radish"
 
-COMPONENT = redis
-LOGFILE= "/tmp/${COMPONENT}.log"
+COMPONENT=redis
+LOGFILE="/tmp/${COMPONENT}.log"
 
 stat() {
 if [ $1 -ne 0 ] ; then

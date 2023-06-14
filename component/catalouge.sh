@@ -58,7 +58,7 @@ stat $?
 echo -n "Updating Mongodb DNS:"
 sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.online/' /home/${APPUSER}/${COMPONENT}/systemd.service 
 mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service 
-mv /etc/systemd/system/${COMPONENT}.service /home/${APPUSER}/${COMPONENT}/systemd.service
+#mv /etc/systemd/system/${COMPONENT}.service /home/${APPUSER}/${COMPONENT}/systemd.service
 stat $?
 
 

@@ -44,7 +44,7 @@ unzip -o /tmp/catalogue.zip  &>> $LOGFILE
 stat $?
 
 echo -n "Moving catalog :"
-mv $COMPONENT-main/ $COMPONENT
+mv $COMPONENT-main $COMPONENT
 chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT/
 stat $?
 

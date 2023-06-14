@@ -25,6 +25,12 @@ yum install nodejs -y &>> $LOGFILE
 
 stat $?
 
+
+
+echo -n "Downloading the $COMPONENT schema:"
+curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
+stat $?
+
 id roboshop
 if [ $? -ne 0 ] ; then 
 echo "creating service account"
@@ -32,13 +38,8 @@ useradd roboshop
 stat $?
 fi
 
-echo -n "Downloading the $COMPONENT schema:"
-curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
-stat $?
-
 
 echo "unzipping catalouge"
-sudo su - roboshop
 cd /home/${APPUSER}/
 rm -rf ${COMPONENT} &>> $LOGFILE
 unzip -o /tmp/catalogue.zip  &>> $LOGFILE 

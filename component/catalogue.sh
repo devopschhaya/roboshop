@@ -39,6 +39,7 @@ stat $?
 
 echo "unzipping catalouge"
 cd /home/${APPUSER}/
+rm -rf ${COMPONENT} &>> $LOGFILE
 unzip -o /tmp/catalogue.zip  &>> $LOGFILE 
 stat $?
 

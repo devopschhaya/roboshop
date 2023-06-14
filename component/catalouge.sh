@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "i am a catalouge"
+echo "i am a catalogue"
 
 COMPONENT=catalouge
 LOGFILE="/tmp/${COMPONENT}.log"

@@ -21,11 +21,9 @@ echo configuring Catalouge
 curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - &>> $LOGFILE
 stat $?
 
+echo -n "Installing NodeJS :"
 yum install nodejs -y &>> $LOGFILE
-
 stat $?
-
-
 
 echo -n "Downloading the $COMPONENT schema:"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
@@ -41,8 +39,9 @@ fi
 
 echo "unzipping catalouge"
 cd /home/${APPUSER}/
+chown -R $APPUSER:$APPUSER /home/roboshop/
 rm -rf ${COMPONENT} &>> $LOGFILE
-unzip -o /tmp/catalogue.zip  &>> $LOGFILE 
+unzip -o /tmp/$COMPONENT.zip  &>> $LOGFILE 
 stat $?
 
 echo -n "Moving catalog :"

@@ -55,7 +55,7 @@ npm install  &>> $LOGFILE
 stat $? 
 
 echo -n "Updating Mongodb DNS:"
-sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.online/' -e 's/MONGO_ENDPOIN/mongodb.roboshop.online/' /home/${APPUSER}/${COMPONENT}/systemd.service 
+sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.online/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.online/' /home/${APPUSER}/${COMPONENT}/systemd.service 
 mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service 
 #mv /etc/systemd/system/${COMPONENT}.service /home/${APPUSER}/${COMPONENT}/systemd.service
 stat $?

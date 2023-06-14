@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "i am a catalogue"
 
-COMPONENT=catalouge
+COMPONENT=catalogue
 LOGFILE="/tmp/${COMPONENT}.log"
 ID=$(id -u)
 APPUSER=roboshop

@@ -53,14 +53,11 @@ npm install  &>> $LOGFILE
 stat $? 
 
 echo -n "Updating Mongodb DNS:"
-sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.online/' /home/${APPUSER}/${COMPONENT}/systemd.service 
+sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service 
 mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service 
 stat $?
 
-echo "reverse proxy"
-for component in catalogue ; do 
-sed -i  -e "/$component/s/localhost/$component.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
-done 
+
 
 echo -n " $COMPONENT restart :"
 systemctl daemon-reload  &>> $LOGFILE

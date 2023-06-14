@@ -38,8 +38,8 @@ fi
 
 
 echo "unzipping catalouge"
-cd /home/${APPUSER}/
 chown -R $APPUSER:$APPUSER /home/roboshop/
+cd /home/${APPUSER}/
 rm -rf ${COMPONENT} &>> $LOGFILE
 unzip -o /tmp/$COMPONENT.zip  &>> $LOGFILE 
 stat $?

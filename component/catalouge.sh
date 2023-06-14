@@ -26,7 +26,7 @@ yum install nodejs -y &>> $LOGFILE
 stat $?
 
 echo -n "Downloading the $COMPONENT schema:"
-curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
+curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
 stat $?
 
 id roboshop
